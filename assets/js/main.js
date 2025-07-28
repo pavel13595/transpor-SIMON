@@ -293,18 +293,24 @@ function animateCounters() {
     const counters = document.querySelectorAll('.stat__number');
     
     counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
-        const suffix = counter.textContent.replace(/[\d]/g, '');
-        let current = 0;
-        const increment = target / 100;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = Math.floor(current) + suffix;
-        }, 20);
+        // Не анимировать, если значение не только число (например, 24/7)
+        const original = counter.textContent.trim();
+        if (/^\d+[K+]*$/.test(original)) {
+            const target = parseInt(original.replace(/[^\d]/g, ''));
+            const suffix = original.replace(/[\d]/g, '');
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                counter.textContent = Math.floor(current) + suffix;
+            }, 20);
+        } else {
+            counter.textContent = original;
+        }
     });
 }
 
