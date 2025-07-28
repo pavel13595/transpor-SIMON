@@ -1,0 +1,209 @@
+/* ===========================================
+   CUSTOMIZATION GUIDE
+   Руководство по настройке сайта
+=========================================== */
+
+/* 1. ИЗМЕНЕНИЕ ЦВЕТОВ */
+:root {
+    /* Основные цвета - измените здесь */
+    --primary-color: #2563eb;        /* Синий - основной цвет */
+    --primary-dark: #1d4ed8;         /* Темно-синий */
+    --primary-light: #3b82f6;        /* Светло-синий */
+    --accent-color: #f59e0b;         /* Оранжевый - акцент */
+    
+    /* Текст */
+    --text-dark: #1e293b;            /* Темный текст */
+    --text-light: #64748b;           /* Светлый текст */
+    
+    /* Фон */
+    --background-white: #ffffff;      /* Белый фон */
+    --background-light: #f8fafc;     /* Светлый фон */
+}
+
+/* Пример изменения на зеленую тему:
+:root {
+    --primary-color: #059669;
+    --primary-dark: #047857;
+    --primary-light: #10b981;
+    --accent-color: #f59e0b;
+}
+*/
+
+/* 2. ИЗМЕНЕНИЕ ШРИФТОВ */
+body {
+    font-family: 'Inter', sans-serif; /* Замените на свой шрифт */
+}
+
+/* Пример для использования других шрифтов:
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+*/
+
+/* 3. ИЗМЕНЕНИЕ РАЗМЕРОВ СЕКЦИЙ */
+:root {
+    --section-padding: 80px 0;       /* Вертикальные отступы секций */
+    --container-max-width: 1200px;   /* Максимальная ширина контента */
+}
+
+/* 4. КАСТОМНЫЕ АНИМАЦИИ */
+/* Замедленные анимации: */
+:root {
+    --transition-slow: 0.8s ease;    /* Медленные переходы */
+}
+
+/* Быстрые анимации: */
+:root {
+    --transition-fast: 0.1s ease;    /* Быстрые переходы */
+}
+
+/* 5. ИЗМЕНЕНИЕ ТЕНЕЙ */
+:root {
+    --shadow-custom: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Глубокие тени */
+}
+
+.service:hover {
+    box-shadow: var(--shadow-custom);
+}
+
+/* 6. КАСТОМНЫЕ HOVER ЭФФЕКТЫ */
+.btn--primary:hover {
+    transform: translateY(-3px) scale(1.02); /* Более выраженный hover */
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+}
+
+/* 7. ИЗМЕНЕНИЕ HERO СЕКЦИИ */
+.hero {
+    min-height: 80vh; /* Изменить высоту hero секции */
+}
+
+/* Альтернативный градиент для hero: */
+.hero__background {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 8. КАСТОМИЗАЦИЯ ФОРМЫ */
+.form__group input:focus,
+.form__group textarea:focus {
+    border-color: var(--accent-color); /* Изменить цвет фокуса */
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* 9. МОБИЛЬНЫЕ НАСТРОЙКИ */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 40px 0; /* Меньшие отступы на мобильных */
+    }
+}
+
+/* 10. ДОБАВЛЕНИЕ НОВЫХ СЕКЦИЙ */
+.custom-section {
+    padding: var(--section-padding);
+    background-color: var(--background-light);
+}
+
+.custom-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ===========================================
+   JAVASCRIPT КАСТОМИЗАЦИЯ
+=========================================== */
+
+/*
+// Изменение текстов в JavaScript:
+// Найдите объект languageData в assets/js/language.js
+
+window.languageData = {
+    en: {
+        'About': 'About Us',           // Ваш новый текст
+        'Services': 'Our Services',    // Ваш новый текст
+        // ... остальные тексты
+    }
+};
+
+// Добавление новых анимаций:
+// В assets/js/main.js найдите функцию initializeScrollAnimations()
+// и добавьте свои селекторы:
+
+const animatedElements = document.querySelectorAll('.service, .advantage, .your-new-class');
+
+// Изменение скорости анимации счетчиков:
+// В функции animateCounters() измените значение:
+const timer = setInterval(() => {
+    // ...
+}, 50); // Увеличьте число для замедления
+*/
+
+/* ===========================================
+   HTML КАСТОМИЗАЦИЯ
+=========================================== */
+
+/*
+<!-- Добавление новой секции после services: -->
+<section class="custom-section">
+    <div class="container">
+        <h2>Your New Section</h2>
+        <p>Your content here...</p>
+    </div>
+</section>
+
+<!-- Добавление нового пункта в навигацию: -->
+<li><a href="#custom" class="nav__link">New Page</a></li>
+
+<!-- Изменение контактной информации: -->
+Найдите в index.html секцию contact и измените:
+- Адрес
+- Телефон  
+- Email
+- Координаты карты
+*/
+
+/* ===========================================
+   ГОТОВЫЕ ЦВЕТОВЫЕ СХЕМЫ
+=========================================== */
+
+/* ЗЕЛЕНАЯ ТЕМА */
+/*
+:root {
+    --primary-color: #059669;
+    --primary-dark: #047857;  
+    --primary-light: #10b981;
+    --accent-color: #f59e0b;
+}
+*/
+
+/* ФИОЛЕТОВАЯ ТЕМА */
+/*
+:root {
+    --primary-color: #7c3aed;
+    --primary-dark: #6d28d9;
+    --primary-light: #8b5cf6;
+    --accent-color: #f59e0b;
+}
+*/
+
+/* КРАСНАЯ ТЕМА */
+/*
+:root {
+    --primary-color: #dc2626;
+    --primary-dark: #b91c1c;
+    --primary-light: #ef4444;
+    --accent-color: #f59e0b;
+}
+*/
+
+/* ТЕМНАЯ ТЕМА */
+/*
+:root {
+    --primary-color: #3b82f6;
+    --text-dark: #ffffff;
+    --text-light: #e2e8f0;
+    --background-white: #1e293b;
+    --background-light: #334155;
+}
+*/

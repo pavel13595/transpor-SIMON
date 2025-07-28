@@ -1,0 +1,85 @@
+/* ===========================================
+   АЛЬТЕРНАТИВНЫЕ СТИЛИ ЛОГОТИПА
+   Дополнительные варианты оформления
+=========================================== */
+
+/* ВАРИАНТ 1: КРУГЛАЯ ИКОНКА С ТЕНЬЮ */
+.logo-variant-1 .logo-icon {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ВАРИАНТ 2: КВАДРАТНАЯ ИКОНКА С ЗАКРУГЛЕННЫМИ УГЛАМИ */
+.logo-variant-2 .logo-icon {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* ВАРИАНТ 3: БЕЗ ФОНА, ТОЛЬКО ЦВЕТНАЯ ИКОНКА */
+.logo-variant-3 .logo-icon {
+    background: none;
+    color: #2980b9;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ВАРИАНТ 4: ГРАДИЕНТ ОТ ЗЕЛЕНОГО К СИНЕМУ */
+.logo-variant-4 .logo-icon {
+    background: linear-gradient(135deg, #27ae60, #2980b9);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+}
+
+/* ВАРИАНТ 5: ТЕМНАЯ ТЕМА */
+.logo-variant-5 .logo-icon {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+}
+
+/* ВАРИАНТ 6: ЗОЛОТОЙ СТИЛЬ */
+.logo-variant-6 .logo-icon {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+
+/* ПРИМЕНЕНИЕ СТИЛЕЙ:
+   
+   Чтобы применить альтернативный стиль:
+   1. Добавьте класс к логотипу в HTML
+   
+   Пример:
+   <div class="logo logo-variant-3">
+   
+   Или замените существующий CSS в main.css
+*/
+
+/* МОБИЛЬНЫЕ АДАПТАЦИИ ДЛЯ ВАРИАНТОВ */
+@media (max-width: 768px) {
+    .logo-variant-1 .logo-icon,
+    .logo-variant-2 .logo-icon,
+    .logo-variant-4 .logo-icon,
+    .logo-variant-5 .logo-icon,
+    .logo-variant-6 .logo-icon {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+    
+    .logo-variant-3 .logo-icon {
+        font-size: 1.8rem;
+    }
+}
