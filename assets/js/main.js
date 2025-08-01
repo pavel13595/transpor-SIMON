@@ -273,14 +273,19 @@ function initializeScrollAnimations() {
 function initializeParallax() {
     const hero = document.querySelector('.hero');
     const heroBackground = document.querySelector('.hero__background');
-    
     if (!hero || !heroBackground) return;
-    // Установить начальный transform и transition при загрузке
+
+    // Отключаем parallax на мобильных
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        heroBackground.style.transform = 'none';
+        heroBackground.style.transition = 'none';
+        return;
+    }
+
     heroBackground.style.transform = 'translateY(0px)';
     heroBackground.style.transition = 'transform 0.8s cubic-bezier(0.4,0,0.2,1)';
-
     let ticking = false;
-
     function updateParallax() {
         const scrolled = window.scrollY;
         const rate = scrolled * -0.5;
@@ -289,14 +294,12 @@ function initializeParallax() {
         heroBackground.style.transition = scrolled === 0 ? 'transform 0.8s cubic-bezier(0.4,0,0.2,1)' : 'transform 0.3s linear';
         ticking = false;
     }
-
     function onScroll() {
         if (!ticking) {
             requestAnimationFrame(updateParallax);
             ticking = true;
         }
     }
-
     window.addEventListener('scroll', onScroll, { passive: true });
 }
 

@@ -354,7 +354,7 @@ button {
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 200%;
+    background: linear-gradient(135deg, rgba(37,99,235,0.22) 0%, rgba(29,78,216,0.16) 100%);
     height: 200%;
     background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     transform: rotate(45deg);
@@ -522,11 +522,19 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, rgba(37,99,235,0.55) 0%, rgba(29,78,216,0.45) 100%);
     background-image: url('../images/hero-logistics.jpg');
     background-size: cover;
     background-position: left center;
     background-blend-mode: overlay;
+    transition: transform 3s cubic-bezier(0.4,0,0.2,1);
+}
+
+@media (max-width: 768px) {
+    .hero__background {
+        transition: none !important;
+        transform: none !important;
+    }
 }
 
 .hero__overlay {
