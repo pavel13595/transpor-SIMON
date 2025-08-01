@@ -1,3 +1,13 @@
+// Плавный скролл наверх при клике на логотип
+document.addEventListener('DOMContentLoaded', function() {
+    const logoLink = document.getElementById('logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
 /**
  * Main JavaScript functionality for SIMON STOCKAGE GLOBAL website
  */
