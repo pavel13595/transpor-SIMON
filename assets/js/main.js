@@ -265,14 +265,18 @@ function initializeParallax() {
     const heroBackground = document.querySelector('.hero__background');
     
     if (!hero || !heroBackground) return;
+    // Установить начальный transform и transition при загрузке
+    heroBackground.style.transform = 'translateY(0px)';
+    heroBackground.style.transition = 'transform 0.8s cubic-bezier(0.4,0,0.2,1)';
 
     let ticking = false;
 
     function updateParallax() {
         const scrolled = window.scrollY;
         const rate = scrolled * -0.5;
-        
         heroBackground.style.transform = `translateY(${rate}px)`;
+        heroBackground.style.filter = '';
+        heroBackground.style.transition = scrolled === 0 ? 'transform 0.8s cubic-bezier(0.4,0,0.2,1)' : 'transform 0.3s linear';
         ticking = false;
     }
 

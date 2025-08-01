@@ -525,7 +525,7 @@ button {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     background-image: url('../images/hero-logistics.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: left center;
     background-blend-mode: overlay;
 }
 
@@ -542,9 +542,11 @@ button {
     position: relative;
     z-index: 3;
     text-align: center;
-    color: white;
+    color: var(--text-dark);
     max-width: 800px;
     animation: fadeInUp 1s ease-out;
+    /* Ensure overlay is below text */
+    overflow: visible;
 }
 
 .hero__title {
@@ -553,13 +555,15 @@ button {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: -0.025em;
+    text-shadow: none;
 }
 
 .hero__subtitle {
     font-size: var(--font-size-xl);
     font-weight: 400;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: none;
 }
 
 .hero__cta {
