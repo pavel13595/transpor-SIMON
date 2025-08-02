@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+  .about__image img {
+    transition: none !important;
+    transform: none !important;
+  }
+}
 /* ========================================
    Responsive Design
 ======================================== */
