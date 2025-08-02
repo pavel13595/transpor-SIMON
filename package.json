@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Modern corporate website for SIMON STOCKAGE GLOBAL logistics company",
   "main": "index.html",
-  "scripts": {
-    "start": "python3 -m http.server 8000",
-    "serve": "python3 -m http.server 8000",
-    "build": "echo 'No build process needed - static site ready for deployment'",
-    "deploy": "echo 'Upload to GitHub Pages or Netlify for deployment'"
-  },
   "keywords": [
     "logistics",
     "transport",
@@ -18,23 +12,6 @@
     "simon-stockage"
   ],
   "author": "SIMON STOCKAGE GLOBAL",
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/simon-stockage-global.git"
-  },
-  "homepage": "https://your-username.github.io/simon-stockage-global",
-  "bugs": {
-    "url": "https://github.com/your-username/simon-stockage-global/issues"
-  },
-  "devDependencies": {},
-  "dependencies": {},
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "engines": {
-    "node": ">=14.0.0"
-  }
+  "license": "UNLICENSED"
+  
 }
