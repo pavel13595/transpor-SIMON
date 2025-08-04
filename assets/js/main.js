@@ -177,17 +177,28 @@ function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 100;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
+    let found = false;
+    // Если на самом верху — активировать только первый пункт и не подсвечивать другие
+    if (window.scrollY < 50) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const firstNav = document.querySelector('.nav__link[href="#about"]');
+        if (firstNav) firstNav.classList.add('active');
+        found = true;
+    }
+    if (!found) {
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
 
-        if (navLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLink.classList.add('active');
-        }
-    });
+            if (!found && navLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                navLink.classList.add('active');
+                found = true;
+            }
+        });
+    }
 }
 
 /**

@@ -1,3 +1,13 @@
+.nav__link:focus,
+.nav__link:active,
+.nav__link:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.nav__link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
 
 /* Вертикальное центрирование иконки и текста в .contact__item */
 .contact__item {
@@ -417,6 +427,16 @@ button {
     padding: 0.5rem 0;
     position: relative;
     transition: color var(--transition-base);
+    outline: none;
+    border: none;
+}
+
+.nav__link:focus,
+.nav__link:active,
+.nav__link:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .nav__link:hover {
@@ -428,18 +448,19 @@ button {
     position: absolute;
     bottom: 0;
     left: 0;
+    left: 0;
+    bottom: 0;
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     border-radius: 2px;
-    transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-
+    transition: left 0.3s cubic-bezier(0.4,0,0.2,1), width 0.3s cubic-bezier(0.4,0,0.2,1);
 .nav__link:hover::after,
 .nav__link.active::after {
     width: 100%;
 }
-
+    width: 100%;
+    left: 0;
 .header__controls {
     display: flex;
     align-items: center;
@@ -1110,4 +1131,7 @@ button {
 
 .fade-in-up {
     animation: fadeInUp 0.8s ease-out;
+}
+
+
 }
