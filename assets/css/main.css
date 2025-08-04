@@ -430,8 +430,9 @@ button {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: width var(--transition-base);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .nav__link:hover::after,
