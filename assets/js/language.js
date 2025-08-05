@@ -15,12 +15,8 @@ class LanguageSwitcher {
     }
 
     loadSavedLanguage() {
-        const savedLang = localStorage.getItem('preferred-language');
-        if (savedLang && ['en', 'fr'].includes(savedLang)) {
-            this.currentLanguage = savedLang;
-        } else {
-            this.currentLanguage = 'fr';
-        }
+        this.currentLanguage = 'fr';
+        localStorage.setItem('preferred-language', 'fr');
     }
 
     bindEvents() {
